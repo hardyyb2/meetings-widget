@@ -4,6 +4,9 @@ import "./App.css";
 function App() {
   const handleFormSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    if (typeof window !== "undefined" && "ApolloMeetings" in window) {
+      window.ApolloMeetings?.submit();
+    }
   };
 
   return (
